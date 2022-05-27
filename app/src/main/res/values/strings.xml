@@ -31,4 +31,22 @@
     <string name="tentang_kami">Tentang Kami</string>
     <string name="logout">Logout</string>
     <string name="v1_0">V1.0</string>
+
+    <string-array name="jenis">
+        <item>PLASTIK</item>
+        <item>KAIN</item>
+        <item>B3</item>
+        <item>MAKANAN</item>
+        <item>ELEKTRONIK</item>
+        <item>RESIDU</item>
+    </string-array>
+
+    <string-array name="gambar_sampah">
+        <item>@drawable/plastik</item>
+        <item>@drawable/kain</item>
+        <item>@drawable/b3</item>
+        <item>@drawable/makanan</item>
+        <item>@drawable/elektronik</item>
+        <item>@drawable/residu</item>
+    </string-array>
 </resources>

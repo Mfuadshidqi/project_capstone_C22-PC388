@@ -10,7 +10,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/mau_buang_sampah_apa"
         android:fontFamily="@font/roboto_regular"
         android:textSize="16sp"
@@ -19,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_stories"
+        android:id="@+id/rv_jenis"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"

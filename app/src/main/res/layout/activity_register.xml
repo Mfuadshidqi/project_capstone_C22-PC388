@@ -67,7 +67,7 @@
         app:layout_constraintStart_toStartOf="@+id/edt_name"
         app:layout_constraintTop_toBottomOf="@+id/edt_name" />
 
-    <com.fuad.wasteappchanneling.customview.EmailEditText
+    <com.fuad.mywasteappchanneling.customview.EmailEditText
         android:id="@+id/edt_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         app:layout_constraintStart_toStartOf="@+id/edt_email"
         app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
-    <com.fuad.wasteappchanneling.customview.EmailEditText
+    <com.fuad.mywasteappchanneling.customview.PasswordEditText
         android:id="@+id/edt_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

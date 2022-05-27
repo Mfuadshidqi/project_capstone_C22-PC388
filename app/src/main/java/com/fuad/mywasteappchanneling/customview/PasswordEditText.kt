@@ -1,10 +1,11 @@
-package com.fuad.wasteappchanneling.customview
+package com.fuad.mywasteappchanneling.customview
 
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import com.fuad.mywasteappchanneling.R
+import com.fuad.wasteappchanneling.customview.NameEditText
 
 class PasswordEditText : NameEditText {
     constructor(context: Context) : super(context) {

@@ -144,12 +144,13 @@
         android:id="@+id/tv_versi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
         android:text="@string/v1_0"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/card_logout"
-        app:layout_constraintStart_toStartOf="@id/card_logout"
-        app:layout_constraintEnd_toEndOf="@id/card_logout"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_logout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
