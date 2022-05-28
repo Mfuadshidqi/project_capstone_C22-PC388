@@ -8,3 +8,7 @@ app.use(bodyParser.json());
 
 //memanggil routes
 var routes = require("./routes");
+
+app.listen(300, => {
+    console.log('Server started on port');
+});
