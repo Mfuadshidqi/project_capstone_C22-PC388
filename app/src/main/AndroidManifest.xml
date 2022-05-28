@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWasteAppChanneling">
         <activity
+            android:name=".PengambilanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PenjemputanActivity"
+            android:exported="false" />
+        <activity
             android:name=".WelcomeActivity"
             android:exported="false" />
         <activity
