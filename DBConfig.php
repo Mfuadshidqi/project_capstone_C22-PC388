@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class DBConfig
 {
@@ -15,5 +15,3 @@ class DBConfig
         $this->databasename = 'waste-app';
     }
 }
-
-?>
