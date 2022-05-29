@@ -1,7 +1,7 @@
 "use strict";
 
-var { response } = require("./res"); //memanggil file res
-var connection = require("./connection"); //memanggil file connection
+var response = require("./res"); //memanggil file res
+var connection = require("./connect"); //memanggil file connection
 
 //eksport index dengan respon ok
 exports.index = function (req, res) {
