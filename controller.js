@@ -5,5 +5,5 @@ var connection = require("./connect"); //memanggil file connection
 
 //eksport index dengan respon ok
 exports.index = function (req, res) {
-  response.ok("Applikasi REST API berjalan.");
+  response.ok("Applikasi REST API berjalan.", res);
 };
