@@ -1,3 +1,4 @@
+//memanggil lib mysql
 var mysql = require('mysql');
 
 //membuat koneksi database
@@ -12,7 +13,7 @@ conn.connect((err) => {
     if (err) {
         throw err;
     }else if{
-        console.log('Mysql berhasil terkoneksi');
+        console.log('MYSQL berhasil terkoneksi');
     }
 });
 

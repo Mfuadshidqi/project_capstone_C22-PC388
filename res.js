@@ -1,11 +1,13 @@
-'use strict';
+"use strict";
 
-export.ok = function (values, res) {
-    var data = {
-        'status': 200,
-        'values': values
-    };
+exports.ok = function (values, res) {
+  var data = {
+    status: 200,
+    values: values,
+  };
 
-    res.json(data);
-    res.end();
-}
+  res.json(data);
+  res.end();
+};
+
+//file ini untuk menginformasikan hasil request kepada client: intinya ngasih RESPONSE
