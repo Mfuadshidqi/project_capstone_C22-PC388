@@ -1,4 +1,5 @@
 //memanggil liblaries npm
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express(); //untuk memanggil express js secara global
