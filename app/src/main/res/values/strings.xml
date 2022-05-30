@@ -31,6 +31,17 @@
     <string name="tentang_kami">Tentang Kami</string>
     <string name="logout">Logout</string>
     <string name="v1_0">V1.0</string>
+    <string name="alamat_pengambilan">Alamat Pengambilan</string>
+    <string name="berat_sampah">Berat Sampah</string>
+    <string name="masukan_alamat_lengkap_anda">Masukan alamat lengkap anda ...</string>
+    <string name="kg">Kg</string>
+    <string name="pilih_jasa">Pilih Jasa</string>
+    <string name="motor_sampah">Motor Sampah</string>
+    <string name="truck_sampah">Truck Sampah</string>
+    <string name="pilih_metode_pemmbayaran">Pilih Metode Pemmbayaran</string>
+    <string name="cod">COD</string>
+    <string name="rp">Rp</string>
+    <string name="konfirmasi_penjemputan">KONFIRMASI PENJEMPUTAN</string>
 
     <string-array name="jenis">
         <item>PLASTIK</item>

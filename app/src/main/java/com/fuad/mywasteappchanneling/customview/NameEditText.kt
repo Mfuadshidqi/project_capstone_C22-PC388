@@ -1,4 +1,4 @@
-package com.fuad.wasteappchanneling.customview
+package com.fuad.mywasteappchanneling.customview
 
 import android.content.Context
 import android.graphics.drawable.Drawable

@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="@+id/tv_daftar"
         app:layout_constraintTop_toBottomOf="@+id/tv_daftar" />
 
-    <com.fuad.wasteappchanneling.customview.NameEditText
+    <com.fuad.mywasteappchanneling.customview.NameEditText
         android:id="@+id/edt_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

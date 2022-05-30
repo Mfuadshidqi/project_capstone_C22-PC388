@@ -7,14 +7,16 @@
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.167" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/activity_main.xml" value="0.12363636363636364" />
+        <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/activity_pengambilan.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/activity_penjemputan.xml" value="0.4" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/activity_welcome.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/card_riwayat.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/card_riwayat.xml" value="0.29583333333333334" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/fragment_dashboard.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/fragment_notifications.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/fragment_profil.xml" value="0.176" />
-        <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/fragment_riwayat.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/fragment_riwayat.xml" value="0.2" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/layout/kategori_sampah.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/Fuad/AndroidStudioProjects/MyWasteAppChanneling/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24010416666666667" />
       </map>

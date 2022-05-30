@@ -7,7 +7,6 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Patterns
 import com.fuad.mywasteappchanneling.R
-import com.fuad.wasteappchanneling.customview.NameEditText
 
 class EmailEditText : NameEditText {
 
