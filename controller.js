@@ -2,6 +2,7 @@
 //file ini untuk mengontrol kebutuhan
 var response = require("./res"); //memanggil file res
 var connection = require("./connect"); //memanggil file connection
+const { query } = require("./connect");
 
 //eksport INDEX dengan respon ok
 exports.index = function (req, res) {
@@ -81,6 +82,28 @@ exports.addTransaction = function (req, res) {
   connection.query(
     "INSERT INTO jenis_sampah (nama_sampah, harga_sampah) VALUES(?, ?, ?)",
     [nama_sampah, gambar_sampah, harga_sampah],
+    function (error, rows, fields) {
+      if (error) {
+        console.log(error);
+      } else {
+        response.ok("Berhasil menambahkan data", res);
+      }
+    }
+  );
+};
+
+//tampil data address user pada: PAGE - TRANSAKSI 1
+exports.transaksi1 = function (req, res) {
+  let id = req.params.id;
+  connection.query(
+    "SELECT user.address_user FROM transaksi JOIN jasa JOIN jenis_sampah JOIN user WHERE transaksi.id_user = user.id_user AND transaksi.id_sampah = jenis_sampah.id_sampah AND transaksi.id_jasa = jasa.id_jasa"
+  );
+};
+
+//tampil insert data pada: PAGE -TRANSAKSI 2
+exports.transaksi2 = function (req, res) {
+  connection.query(
+    "SELECT user.address_user FROM user WHERE user",
     function (error, rows, fields) {
       if (error) {
         console.log(error);
