@@ -11,4 +11,5 @@ module.exports = function (app) {
   app.route("/addUser").post(myjson.addUser);
   app.route("/showwastebyid/:id").get(myjson.showWastebyID);
   app.route("/addWaste").post(myjson.addWaste);
+  app.route("/history").get(myjson.showHistory);
 };

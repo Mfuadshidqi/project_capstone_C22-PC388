@@ -72,7 +72,7 @@ exports.showWastebyID = function (req, res) {
   );
 };
 
-//menambahkan data TRANSAKSI: PAGE - PENJEMPUTAN
+// menambahkan data TRANSAKSI: PAGE - TRANSAKSI
 exports.addTransaction = function (req, res) {
   //body itu data yang akan dipost berdasarkan input dari user
   let id = req.params.id;
@@ -96,8 +96,7 @@ exports.showHistory = function (req, res) {
   //menampilkan data dari transaksi, jasa, sampah
   let id = req.params.id;
   connection.query(
-    "SELECT * FROM history",
-    [id],
+    "SELECT jenis_sampah.nama_sampah, transaksi.berat_sampah, transaksi.total_harga FROM history JOIN transaksi JOIN jasa JOIN jenis_sampah WHERE history.id_transaksi = transaksi.id_transaksi AND history.id_jasa = jasa.id_jasa AND history.id_sampah = jenis_sampah.id_sampah ORDER BY transaksi.id_transaksi",
     function (error, rows, fields) {
       if (error) {
         console.log(error);
@@ -107,3 +106,5 @@ exports.showHistory = function (req, res) {
     }
   );
 };
+
+//
