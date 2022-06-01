@@ -1,11 +1,12 @@
-package com.fuad.mywasteappchanneling
+package com.fuad.mywasteappchanneling.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.fuad.mywasteappchanneling.R
 
-class PenjemputanActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_penjemputan)
+        setContentView(R.layout.activity_login)
     }
 }

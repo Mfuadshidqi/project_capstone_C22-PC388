@@ -45,6 +45,8 @@
     <string name="tunggu">Mohon tunggu, jasa driver sedang menuju ke tempatmu ...</string>
     <string name="siapkan_uang_pas_yaa">Siapkan uang pas yaa</string>
     <string name="sampah_diambil">SAMPAH DIAMBIL</string>
+    <string name="ini_adalah_sampah_jenis">Ini adalah sampah jenis</string>
+    <string name="lanjutkan">Lanjutkan</string>
 
     <string-array name="jenis">
         <item>PLASTIK</item>
