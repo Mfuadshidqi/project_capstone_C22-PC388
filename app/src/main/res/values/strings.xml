@@ -33,7 +33,7 @@
     <string name="v1_0">V1.0</string>
     <string name="alamat_pengambilan">Alamat Pengambilan</string>
     <string name="berat_sampah">Berat Sampah</string>
-    <string name="masukan_alamat_lengkap_anda">Masukan alamat lengkap anda ...</string>
+    <string name="masukan_alamat_lengkap_anda">Masukan alamat lengkap anda …</string>
     <string name="kg">Kg</string>
     <string name="pilih_jasa">Pilih Jasa</string>
     <string name="motor_sampah">Motor Sampah</string>
@@ -42,7 +42,7 @@
     <string name="cod">COD</string>
     <string name="rp">Rp</string>
     <string name="konfirmasi_penjemputan">KONFIRMASI PENJEMPUTAN</string>
-    <string name="tunggu">Mohon tunggu, jasa driver sedang menuju ke tempatmu ...</string>
+    <string name="tunggu">Mohon tunggu, jasa driver sedang menuju ke tempatmu …</string>
     <string name="siapkan_uang_pas_yaa">Siapkan uang pas yaa</string>
     <string name="sampah_diambil">SAMPAH DIAMBIL</string>
     <string name="ini_adalah_sampah_jenis">Ini adalah sampah jenis</string>
@@ -55,6 +55,9 @@
         <item>MAKANAN</item>
         <item>ELEKTRONIK</item>
         <item>RESIDU</item>
+        <item>KERTAS/KARTON</item>
+        <item>KACA</item>
+        <item>LOGAM</item>
     </string-array>
 
     <string-array name="gambar_sampah">
@@ -64,5 +67,8 @@
         <item>@drawable/makanan</item>
         <item>@drawable/elektronik</item>
         <item>@drawable/residu</item>
+        <item>@drawable/kertas_karton</item>
+        <item>@drawable/kaca</item>
+        <item>@drawable/logam</item>
     </string-array>
 </resources>
