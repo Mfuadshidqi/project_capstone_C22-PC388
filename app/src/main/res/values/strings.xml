@@ -42,6 +42,9 @@
     <string name="cod">COD</string>
     <string name="rp">Rp</string>
     <string name="konfirmasi_penjemputan">KONFIRMASI PENJEMPUTAN</string>
+    <string name="tunggu">Mohon tunggu, jasa driver sedang menuju ke tempatmu ...</string>
+    <string name="siapkan_uang_pas_yaa">Siapkan uang pas yaa</string>
+    <string name="sampah_diambil">SAMPAH DIAMBIL</string>
 
     <string-array name="jenis">
         <item>PLASTIK</item>
