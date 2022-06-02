@@ -1,31 +1,30 @@
 package com.fuad.mywasteappchanneling.ui.home
 
-import android.content.res.Configuration
+import android.content.Intent
+import android.nfc.NfcAdapter.EXTRA_DATA
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fuad.mywasteappchanneling.R
 import com.fuad.mywasteappchanneling.adapter.JenisSampah
 import com.fuad.mywasteappchanneling.adapter.ListWasteAdapter
 import com.fuad.mywasteappchanneling.databinding.FragmentHomeBinding
+import com.fuad.mywasteappchanneling.ui.penjemputan.PenjemputanActivity
 
 class HomeFragment : Fragment() {
+    private lateinit var onItemClickCallback: ListWasteAdapter.OnItemClickCallback
 
     private var _binding: FragmentHomeBinding? = null
     private lateinit var rvJenisSampah : RecyclerView
-
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
+    fun setOnItemClickCallback(onItemClickCallback: ListWasteAdapter.OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -58,13 +57,18 @@ class HomeFragment : Fragment() {
         val listWasteAdapter = ListWasteAdapter(listWaste)
         binding.rvJenis.adapter = listWasteAdapter
 
-//        listWasteAdapter.setOnItemClickCallback(object : ListWasteAdapter.OnItemClickCallback {
-//            override fun onItemClicked(data: JenisSampah) {
-//                showSelectedWaste(data)
-//            }
-//        })
+        listWasteAdapter.setOnItemClickCallback(object : ListWasteAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: JenisSampah) {
+                showSelectedWaste(data)
+            }
+        })
     }
 
+    private fun showSelectedWaste(data: JenisSampah) {
+        val moveWithObjectIntent = Intent(activity, PenjemputanActivity::class.java)
+        moveWithObjectIntent.putExtra(PenjemputanActivity.EXTRA_DATA, data)
+        startActivity(moveWithObjectIntent)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

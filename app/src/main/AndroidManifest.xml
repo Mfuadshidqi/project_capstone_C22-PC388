@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWasteAppChanneling">
         <activity
+            android:name=".scan.ScannerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.scanresult.ScanResultActivity"
             android:exported="false" />
         <activity
