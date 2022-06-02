@@ -10,8 +10,7 @@ module.exports = function (app) {
   app.route("/showuserbyid/:id").get(myjson.showAllUserbyID);
   app.route("/addUser").post(myjson.addUser);
   app.route("/showwastebyid/:id").get(myjson.showWastebyID);
-  app.route("/addWaste").post(myjson.addWaste);
   app.route("/history").get(myjson.showHistory);
-  app.route("/transaksi1").get(myjson.transaksi1);
-  app.route("/transaksi2").get(myjson.transaksi2);
+  app.route("/transaksi1").get(myjson.getAlamat);
+  app.route("/transaksi2/:id").get(myjson.getDetailSampah);
 };

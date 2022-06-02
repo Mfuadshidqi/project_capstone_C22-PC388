@@ -73,7 +73,7 @@ exports.showWastebyID = function (req, res) {
   );
 };
 
-// menambahkan data TRANSAKSI: PAGE - TRANSAKSI
+// menambahkan data berat sampah TRANSAKSI: PAGE - TRANSAKSI
 exports.addTransaction = function (req, res) {
   //body itu data yang akan dipost berdasarkan input dari user
   let id = req.params.id;
@@ -92,24 +92,34 @@ exports.addTransaction = function (req, res) {
   );
 };
 
-//tampil data address user pada: PAGE - TRANSAKSI 1
-exports.transaksi1 = function (req, res) {
-  let id = req.params.id;
+// Get alamat: PAGE - TRANSAKSI
+exports.getAlamat = function (req, res) {
+  const id = req.params.id;
   connection.query(
-    "SELECT user.address_user FROM transaksi JOIN jasa JOIN jenis_sampah JOIN user WHERE transaksi.id_user = user.id_user AND transaksi.id_sampah = jenis_sampah.id_sampah AND transaksi.id_jasa = jasa.id_jasa"
-  );
-};
-
-//tampil insert data pada: PAGE -TRANSAKSI 2
-exports.transaksi2 = function (req, res) {
-  connection.query(
-    "SELECT user.address_user FROM user WHERE user",
+    "SELECT user.address_user from user where user.id_user = ?",
+    [id],
     function (error, rows, fields) {
       if (error) {
         console.log(error);
       } else {
-        response.ok("Berhasil menambahkan data", res);
+        response.ok(rows, res);
       }
+    }
+  );
+};
+
+// Get Detail sampah: PAGE - TRANSAKSI
+exports.getDetailSampah = function (req, res) {
+  const id = req.params.id;
+  connection.query(
+    "SELECT * from jenis_sampah where jenis_sampah.id_sampah = ?",
+    [id],
+    function (error, rows, fields) {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      response.ok(rows, res);
     }
   );
 };
@@ -130,4 +140,4 @@ exports.showHistory = function (req, res) {
   );
 };
 
-//
+//menampilkan
