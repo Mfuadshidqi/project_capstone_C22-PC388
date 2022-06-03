@@ -19,12 +19,8 @@ class HomeFragment : Fragment() {
     private lateinit var onItemClickCallback: ListWasteAdapter.OnItemClickCallback
 
     private var _binding: FragmentHomeBinding? = null
-    private lateinit var rvJenisSampah : RecyclerView
     private val binding get() = _binding!!
 
-    fun setOnItemClickCallback(onItemClickCallback: ListWasteAdapter.OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

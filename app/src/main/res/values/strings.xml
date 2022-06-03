@@ -47,6 +47,9 @@
     <string name="sampah_diambil">SAMPAH DIAMBIL</string>
     <string name="ini_adalah_sampah_jenis">Ini adalah sampah jenis</string>
     <string name="lanjutkan">Lanjutkan</string>
+    <string name="preview_image">Preview Image</string>
+    <string name="kamera">KAMERA</string>
+    <string name="upload">UPLOAD</string>
 
     <string-array name="jenis">
         <item>PLASTIK</item>

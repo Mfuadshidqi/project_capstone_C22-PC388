@@ -10,19 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWasteAppChanneling">
         <activity
-            android:name=".scan.ScannerActivity"
+            android:name=".scanner.ScannerActivity"
             android:exported="false" />
         <activity
             android:name=".ui.scanresult.ScanResultActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.scan.ScanActivity"
             android:exported="false" />
         <activity
             android:name=".ui.pengambilan.PengambilanActivity"
             android:exported="false" />
         <activity
             android:name=".ui.penjemputan.PenjemputanActivity"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:label="Penjemputan"
             android:exported="false" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"

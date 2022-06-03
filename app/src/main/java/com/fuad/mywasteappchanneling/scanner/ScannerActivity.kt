@@ -1,4 +1,4 @@
-package com.fuad.mywasteappchanneling.scan
+package com.fuad.mywasteappchanneling.scanner
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
