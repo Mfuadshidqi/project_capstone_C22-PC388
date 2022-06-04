@@ -6,7 +6,7 @@ var jwt = require("jsonwebtoken");
 var config = require("../config/secret");
 var ip = require("ip");
 
-//controller untuk register
+//controller untuk REGISTER
 exports.registrasi = function (req, res) {
   //data yang akan dimasukan ditampung di array post
   var post = {
@@ -17,12 +17,12 @@ exports.registrasi = function (req, res) {
   };
 
   //buat query untuk cek apakah email udah terdaftar apa belum
-  var query = "SELECT email_user FROM ?? WHERE ??";
+  var query = "SELECT email_user FROM ?? WHERE ?? = ?";
   var table = ["user", "email_user", post.email_user];
 
   query = mysql.format(query, table);
 
-  connection.query(query, table, function (error, rows) {
+  connection.query(query, function (error, rows) {
     if (error) {
       console.log(error);
     } else {
@@ -38,7 +38,7 @@ exports.registrasi = function (req, res) {
           }
         });
       } else {
-        response.ok("Email sudah terdafatar!");
+        response.ok("Email sudah terdafatar!", res);
       }
     }
   });
