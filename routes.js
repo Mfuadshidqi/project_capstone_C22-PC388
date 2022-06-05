@@ -9,11 +9,11 @@ module.exports = function (app) {
 
   //data sampah
   app.route("/getSampah").get(myjson.getSampah);
-  app.route("/history").get(myjson.showHistory);
+  app.route("/showWastebyID/:id").get(myjson.showWastebyID);
+  app.route("/showHistory").get(myjson.showHistory);
 
   //data transaksi
   app.route("/addTransaction").post(myjson.addTransaction); //menambahkan data transaksi
-  app.route("/transaksi2/:id").get(myjson.getDetailSampah);
 
   //data jasa
   app.route("/getJasa").get(myjson.getJasa);
