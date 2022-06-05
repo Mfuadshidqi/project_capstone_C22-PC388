@@ -1,22 +1,20 @@
 package com.fuad.mywasteappchanneling.ui.home
 
 import android.content.Intent
-import android.nfc.NfcAdapter.EXTRA_DATA
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.fuad.mywasteappchanneling.R
 import com.fuad.mywasteappchanneling.adapter.JenisSampah
 import com.fuad.mywasteappchanneling.adapter.ListWasteAdapter
 import com.fuad.mywasteappchanneling.databinding.FragmentHomeBinding
+import com.fuad.mywasteappchanneling.ui.scanner.ScannerActivity
 import com.fuad.mywasteappchanneling.ui.penjemputan.PenjemputanActivity
 
 class HomeFragment : Fragment() {
-    private lateinit var onItemClickCallback: ListWasteAdapter.OnItemClickCallback
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -28,11 +26,12 @@ class HomeFragment : Fragment() {
     ): View {
 //        val homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
         showRecyclerList()
+
+        binding.buttonPindai.setOnClickListener{
+            startActivity(Intent(activity, ScannerActivity :: class.java))
+        }
         return binding.root
-
-
     }
 
     private val listWaste: ArrayList<JenisSampah>
