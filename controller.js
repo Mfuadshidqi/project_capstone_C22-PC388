@@ -9,54 +9,6 @@ exports.index = function (req, res) {
   response.ok("Applikasi REST API berjalan.", res);
 };
 
-//menampilkan semua data user: PAGE - PROFILE
-exports.showAllUser = function (req, res) {
-  connection.query("SELECT * FROM user", function (error, rows, fields) {
-    if (error) {
-      connection.log(error);
-    } else {
-      response.ok(rows, res);
-    }
-  });
-};
-
-//menampilkan data user berdasarkan id: PAGE - LOGIN
-exports.showAllUserbyID = function (req, res) {
-  let id = req.params.id;
-  connection.query(
-    "SELECT * FROM user WHERE id_user = ?",
-    [id],
-    function (error, rows, fields) {
-      if (error) {
-        connection.log(error);
-      } else {
-        response.ok(rows, res);
-      }
-    }
-  );
-};
-
-//menambahkan data user --> PAGE - REGISTRASI
-exports.addUser = function (req, res) {
-  //body itu data yang akan dipost berdasarkan input dari user
-  var nama_user = req.body.nama_user;
-  var email_user = req.body.email_user;
-  var pw_user = req.body.pw_user;
-  var address_user = req.body.address_user;
-
-  connection.query(
-    "INSERT INTO user (nama_user, email_user, pw_user, address_user) VALUES(?, ?, ?, ?)",
-    [nama_user, email_user, pw_user, address_user],
-    function (error, rows, fields) {
-      if (error) {
-        console.log(error);
-      } else {
-        response.ok("Berhasil menambahkan data", res);
-      }
-    }
-  );
-};
-
 //menampilkan data jenis-jenis sampah BY ID: PAGE - KATEGORI SAMPAH dan PINDAI SAMPAH
 exports.showWastebyID = function (req, res) {
   let id = req.params.id;
@@ -73,53 +25,53 @@ exports.showWastebyID = function (req, res) {
   );
 };
 
-// menambahkan data berat sampah TRANSAKSI: PAGE - TRANSAKSI
-exports.addTransaction = function (req, res) {
-  //body itu data yang akan dipost berdasarkan input dari user
-  let id = req.params.id;
-  var nama_sampah = req.body.nama_sampah;
-  var harga_sampah = req.body.harga_sampah;
-  connection.query(
-    "INSERT INTO jenis_sampah (nama_sampah, harga_sampah) VALUES(?, ?, ?)",
-    [nama_sampah, gambar_sampah, harga_sampah],
-    function (error, rows, fields) {
-      if (error) {
-        console.log(error);
-      } else {
-        response.ok("Berhasil menambahkan data", res);
-      }
+//menampilkan data sampah dan jasa di page transaksi
+//get jasa
+exports.getJasa = function (req, res) {
+  const id = req.params.id;
+  connection.query("SELECT * from jasa", function (error, rows, fields) {
+    if (error) {
+      console.log(error);
+      return;
     }
-  );
+    response.ok(rows, res);
+  });
 };
 
-// Get alamat: PAGE - TRANSAKSI
-exports.getAlamat = function (req, res) {
+//get sampah
+exports.getSampah = function (req, res) {
   const id = req.params.id;
   connection.query(
-    "SELECT user.address_user from user where user.id_user = ?",
-    [id],
-    function (error, rows, fields) {
-      if (error) {
-        console.log(error);
-      } else {
-        response.ok(rows, res);
-      }
-    }
-  );
-};
-
-// Get Detail sampah: PAGE - TRANSAKSI
-exports.getDetailSampah = function (req, res) {
-  const id = req.params.id;
-  connection.query(
-    "SELECT * from jenis_sampah where jenis_sampah.id_sampah = ?",
-    [id],
+    "SELECT * from jenis_sampah",
     function (error, rows, fields) {
       if (error) {
         console.log(error);
         return;
       }
       response.ok(rows, res);
+    }
+  );
+};
+
+// menambahkan data di TRANSAKSI: PAGE - TRANSAKSI
+exports.addTransaction = function (req, res) {
+  //body itu data yang akan dipost berdasarkan input dari user
+  let id = req.params.id;
+  const date = new Date();
+  var total_harga = req.body.total_harga;
+  var berat_sampah = req.body.berat_sampah;
+  var id_sampah = req.body.id_sampah;
+  var id_jasa = req.body.id_jasa;
+  var id_user = req.body.id_user;
+  connection.query(
+    "INSERT INTO transaksi (date_transaksi, total_harga, berat_sampah, id_sampah, id_jasa, id_user) VALUES(?,?,?,?,?,?)",
+    [date, total_harga, berat_sampah, id_sampah, id_jasa, id_user],
+    function (error, rows, fields) {
+      if (error) {
+        console.log(error);
+      } else {
+        response.ok("Berhasil menambahkan data", res);
+      }
     }
   );
 };
@@ -139,5 +91,3 @@ exports.showHistory = function (req, res) {
     }
   );
 };
-
-//menampilkan
