@@ -27,7 +27,7 @@ class ScannerActivity : AppCompatActivity() {
         binding.btnKamera.setOnClickListener { startTakePhoto() }
         binding.btnGaleri.setOnClickListener { startGallery() }
     }
-
+    // Intent gallery
     private fun startGallery() {
         val intent = Intent()
         intent.action = Intent.ACTION_GET_CONTENT
