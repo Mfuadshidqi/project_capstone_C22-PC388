@@ -3,9 +3,14 @@ var mysql = require("mysql");
 
 //membuat koneksi database
 const conn = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
+  // host: "localhost",
+  // user: "root",
+  // password: "",
+  // database: "waste",
+
+  host: "104.154.30.56",
+  user: "waste-app-user",
+  password: "wasteapp101",
   database: "waste",
 });
 

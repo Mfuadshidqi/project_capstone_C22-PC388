@@ -1,2 +1,5 @@
 runtime: nodejs16
 
+env: flex
+
+cloud_sql_instances: fluent-stratum-345612:us-central1:waste-app
