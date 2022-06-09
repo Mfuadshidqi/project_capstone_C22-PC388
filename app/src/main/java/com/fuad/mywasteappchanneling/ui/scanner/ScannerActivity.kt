@@ -1,23 +1,23 @@
 package com.fuad.mywasteappchanneling.ui.scanner
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import androidx.core.graphics.drawable.toBitmap
 import com.fuad.mywasteappchanneling.R
 import com.fuad.mywasteappchanneling.databinding.ActivityScannerBinding
-import com.fuad.mywasteappchanneling.utils.FileUtil
-import com.fuad.mywasteappchanneling.utils.FileUtil.loadModelFile
+import com.fuad.mywasteappchanneling.ml.ModelBangkitV2
 import com.fuad.mywasteappchanneling.utils.MediaUtils
-import org.tensorflow.lite.Interpreter
-import org.tensorflow.lite.task.vision.detector.ObjectDetector
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.File
-import java.io.IOException
 import java.nio.ByteBuffer
 
 class ScannerActivity : AppCompatActivity() {
@@ -41,22 +41,91 @@ class ScannerActivity : AppCompatActivity() {
         binding.btnKamera.setOnClickListener { startTakePhoto() }
         binding.btnGaleri.setOnClickListener { startGallery() }
 
+        val model = ModelBangkitV2.newInstance(this)
+        var bitmap = binding.previewImageView.drawable.toBitmap()
+
+        //converting bitmap into tensor flow image
+        val newBitmap = Bitmap.createScaledBitmap(
+            bitmap, 224, 224, true
+        )
+        val byteBuffer = ByteBuffer.allocate(448 * 448 * 3)
+        byteBuffer.rewind()
+        newBitmap.copyPixelsToBuffer(byteBuffer)
+        // Creates inputs for reference.
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+
+        inputFeature0.loadBuffer(byteBuffer)
+
+        // Runs model inference and gets result.
+        val outputs = model.process(inputFeature0)
+        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+
+        Log.d("shape", outputFeature0.toString())
+        // Releases model resources if no longer used.
+        model.close()
+
+
+
+//        val wasteModel = ModelBangkitV2.newInstance(this)
+//        var bitmap = binding.previewImageView.drawable.toBitmap()
+//
+//        //converting bitmap into tensor flow image
+//        val newBitmap = Bitmap.createScaledBitmap(
+//            bitmap, 224, 224, true
+//        )
+//
+//        val buffer = ByteBuffer.allocate(1024 * 1024 * 3)
+//        buffer.rewind()
+//        newBitmap.copyPixelsToBuffer(buffer)
+//
+//        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+////        inputFeature0.loadBuffer(loadModelFile(assets,modelPath = "model_bangkit_v2.tflite"))
+//
+//        Log.d("shape", buffer.toString())
+//        Log.d("shape", inputFeature0.buffer.toString())
+//
+//
+//        inputFeature0.loadBuffer(buffer)
+//
+//        val output = wasteModel.process(inputFeature0)
+//        val outputFeature0 = output.outputFeature0AsTensorBuffer
+//
+//        Log.d("output",output.toString())
+
+//        bitmap = Bitmap.createScaledBitmap(bitmap, 32, 32, true)
+//        val model = ModelBangkitV2.newInstance(this)
+//
+//// Creates inputs for reference.
+//        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 32, 32, 1), DataType.FLOAT32)
+//        inputFeature0.loadBuffer(loadModelFile(assets,modelPath = "model_bangkit_v2.tflite"))
+//
+//        val tensorImage = TensorImage(DataType.FLOAT32)
+//        tensorImage.load(bitmap)
+//        val byteBuffer = tensorImage.buffer
+//
+//// Runs model inference and gets result.
+//        val outputs = model.process(inputFeature0)
+//        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+
+// Releases model resources if no longer used.
+//        model.close()
+
         // Step 2: Initialize the detector object
-        val options = ObjectDetector.ObjectDetectorOptions.builder()
-            .setMaxResults(5)
-            .setScoreThreshold(0.5f)
-            .build()
+//        val options = ObjectDetector.ObjectDetectorOptions.builder()
+//            .setMaxResults(5)
+//            .setScoreThreshold(0.5f)
+//            .build()
 //        val detector = ObjectDetector.createFromFileAndOptions(
 //            this, // the application context
 //            "model_bangkit_v2.tflite", // must be same as the filename in assets folder
 //            options
 //        )
 
-        val detector = ObjectDetector.createFromFileAndOptions(
-            this, // the application context
-            "model_bangkit_v2.tflite", // must be same as the filename in assets folder
-            options
-        )
+//        val detector = ObjectDetector.createFromFileAndOptions(
+//            this, // the application context
+//            "model_bangkit_v2.tflite", // must be same as the filename in assets folder
+//            options
+//        )
 
 //            try {
 //                val buffer: ByteBuffer = loadModelFile(this.assets, "model_bangkit_v2.tflite")
