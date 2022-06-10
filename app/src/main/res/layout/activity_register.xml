@@ -10,7 +10,7 @@
         android:id="@+id/view_register"
         android:layout_width="294dp"
         android:layout_height="294dp"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/image_register"
         app:flow_verticalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,18 +99,42 @@
         app:layout_constraintStart_toStartOf="@+id/tv_password"
         app:layout_constraintTop_toBottomOf="@+id/tv_password" />
 
+    <TextView
+        android:id="@+id/tv_regis_alamat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/masukan_alamat"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_daftar"
+        app:layout_constraintStart_toStartOf="@+id/tv_daftar"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+
+
+    <com.fuad.mywasteappchanneling.customview.NameEditText
+        android:id="@+id/edt_alamat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="@string/masukan_alamat_anda"
+        app:layout_constraintEnd_toEndOf="@+id/tv_daftar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_daftar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_regis_alamat" />
+
     <Button
         android:id="@+id/btn_daftar"
         android:layout_width="188dp"
         android:layout_height="50dp"
         android:layout_marginTop="23dp"
+        android:background="@drawable/button_style"
+        android:fontFamily="@font/roboto_regular"
         android:text="@string/daftar"
         android:textSize="16sp"
-        android:fontFamily="@font/roboto_regular"
-        android:background="@drawable/button_style"
         app:layout_constraintEnd_toEndOf="@+id/tv_daftar"
         app:layout_constraintStart_toStartOf="@+id/tv_daftar"
-        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_alamat" />
 
     <TextView
         android:id="@+id/tanya"

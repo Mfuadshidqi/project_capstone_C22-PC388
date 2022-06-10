@@ -52,6 +52,8 @@
     <string name="scan">KAMERA</string>
     <string name="upload">UPLOAD GAMBAR</string>
     <string name="galeri">GALERI</string>
+    <string name="masukan_alamat">Masukan Alamat</string>
+    <string name="masukan_alamat_anda">Masukan alamat anda …</string>
 
     <string-array name="jenis">
         <item>PLASTIK</item>

@@ -1,5 +1,6 @@
 package com.fuad.mywasteappchanneling.ui.scanner
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -33,6 +34,7 @@ class ScannerActivity : AppCompatActivity() {
 //    }
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityScannerBinding.inflate(layoutInflater)
@@ -42,7 +44,7 @@ class ScannerActivity : AppCompatActivity() {
         binding.btnGaleri.setOnClickListener { startGallery() }
 
         val model = ModelBangkitV2.newInstance(this)
-        var bitmap = binding.previewImageView.drawable.toBitmap()
+        var bitmap = resources.getDrawable(R.drawable.img_1).toBitmap()
 
         //converting bitmap into tensor flow image
         val newBitmap = Bitmap.createScaledBitmap(
@@ -60,7 +62,9 @@ class ScannerActivity : AppCompatActivity() {
         val outputs = model.process(inputFeature0)
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-        Log.d("shape", outputFeature0.toString())
+//        for (i in 0 until ){
+            Log.d("shape","$outputFeature0")
+//        }
         // Releases model resources if no longer used.
         model.close()
 
