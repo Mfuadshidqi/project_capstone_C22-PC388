@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.fuad.mywasteappchanneling.data.repository.UserRepository
 import com.fuad.mywasteappchanneling.di.UserInjection
 import com.fuad.mywasteappchanneling.ui.login.LoginViewModel
+import com.fuad.mywasteappchanneling.ui.profil.ProfilFragment
+import com.fuad.mywasteappchanneling.ui.profil.ProfilViewModel
 import com.fuad.mywasteappchanneling.ui.register.RegisterViewModel
 
 class UserViewModelFactory(private val userRepo: UserRepository) : ViewModelProvider.NewInstanceFactory() {
@@ -18,6 +20,8 @@ class UserViewModelFactory(private val userRepo: UserRepository) : ViewModelProv
             }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(userRepo) as T
+            }modelClass.isAssignableFrom(ProfilViewModel::class.java) -> {
+                ProfilViewModel(userRepo) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

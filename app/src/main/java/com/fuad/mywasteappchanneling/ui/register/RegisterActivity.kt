@@ -42,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
             val alamat = binding.edtAlamat.text.toString().trim()
             when {
                 name.isEmpty() -> {
-                    binding.edtName.error = resources.getString(R.string.message_validation, "name")
+                    binding.edtName.error = resources.getString(R.string.message_validation, "nama")
                 }
                 email.isEmpty() -> {
                     binding.edtEmail.error = resources.getString(R.string.message_validation, "email")
@@ -77,7 +77,7 @@ class RegisterActivity : AppCompatActivity() {
                                     showLoading(false)
                                     Toast.makeText(
                                         this,
-                                        resources.getString(R.string.signup_error),
+                                        result.error,
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }

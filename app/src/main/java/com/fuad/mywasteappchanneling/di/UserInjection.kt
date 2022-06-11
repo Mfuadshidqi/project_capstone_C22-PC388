@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.fuad.mywasteappchanneling.data.remote.retrofit.ApiConfig
 import com.fuad.mywasteappchanneling.data.repository.UserRepository
+import com.fuad.mywasteappchanneling.ui.profil.ProfilFragment
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

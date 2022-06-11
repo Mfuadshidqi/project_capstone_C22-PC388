@@ -1,13 +1,22 @@
 package com.fuad.mywasteappchanneling.ui.profil
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.fuad.mywasteappchanneling.data.repository.UserRepository
+import kotlinx.coroutines.launch
 
-class ProfilViewModel : ViewModel() {
+class ProfilViewModel(private val userRepo: UserRepository) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+//    private val _text = MutableLiveData<String>().apply {
+//        value = "This is notifications Fragment"
+//    }
+//    val text: LiveData<String> = _text
+    fun isLogin() : LiveData<Boolean> {
+        return userRepo.isLogin().asLiveData()
     }
-    val text: LiveData<String> = _text
+
+    fun logout() {
+    viewModelScope.launch {
+        userRepo.logout()
+        }
+    }
 }
