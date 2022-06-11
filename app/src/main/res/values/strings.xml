@@ -54,6 +54,9 @@
     <string name="galeri">GALERI</string>
     <string name="masukan_alamat">Masukan Alamat</string>
     <string name="masukan_alamat_anda">Masukan alamat anda …</string>
+    <string name="message_validation">Masukan %1$s anda</string>
+    <string name="login_error">Masuk gagal, mohon coba kembali !</string>
+    <string name="signup_error">Daftar gagal, mohon coba kemabali !</string>
 
     <string-array name="jenis">
         <item>PLASTIK</item>

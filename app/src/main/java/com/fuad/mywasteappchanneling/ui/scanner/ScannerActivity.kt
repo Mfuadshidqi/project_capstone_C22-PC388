@@ -11,6 +11,7 @@ import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import androidx.core.graphics.convertTo
 import androidx.core.graphics.drawable.toBitmap
 import com.fuad.mywasteappchanneling.R
 import com.fuad.mywasteappchanneling.databinding.ActivityScannerBinding
@@ -44,7 +45,7 @@ class ScannerActivity : AppCompatActivity() {
         binding.btnGaleri.setOnClickListener { startGallery() }
 
         val model = ModelBangkitV2.newInstance(this)
-        var bitmap = resources.getDrawable(R.drawable.img_1).toBitmap()
+        var bitmap = binding.previewImageView.drawable.toBitmap()
 
         //converting bitmap into tensor flow image
         val newBitmap = Bitmap.createScaledBitmap(

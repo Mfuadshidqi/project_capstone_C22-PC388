@@ -10,7 +10,7 @@
         android:id="@+id/view_register"
         android:layout_width="294dp"
         android:layout_height="294dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/image_register"
         app:flow_verticalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/tv_daftar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/daftar"
@@ -37,7 +37,7 @@
         android:id="@+id/tv_nama_lengkap"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/nama_lengkap"
         android:textSize="12sp"
@@ -59,7 +59,7 @@
         android:id="@+id/tv_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/email"
         android:textSize="12sp"
@@ -81,7 +81,7 @@
         android:id="@+id/tv_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/password"
         android:textSize="12sp"
@@ -103,7 +103,7 @@
         android:id="@+id/tv_regis_alamat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/masukan_alamat"
         android:textSize="12sp"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_daftar" />
 
     <TextView
-        android:id="@+id/disini"
+        android:id="@+id/tv_disini_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -162,5 +162,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tanya"
         app:layout_constraintTop_toBottomOf="@+id/btn_daftar" />
+
+    <RelativeLayout
+        android:id="@+id/view_progressbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@color/base_color_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
