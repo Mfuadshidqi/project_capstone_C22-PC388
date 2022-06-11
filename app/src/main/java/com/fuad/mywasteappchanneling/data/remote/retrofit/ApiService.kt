@@ -22,4 +22,14 @@ interface ApiService {
         @Field("email_user") email: String,
         @Field("pw_user") password: String
     ): ResponseLogin
+
+    @FormUrlEncoded
+    @POST("addTransaction")
+    suspend fun addTransaction(
+        @Field("total_harga") harga: Int,
+        @Field("berat_sampah") berat: Int,
+        @Field("id_sampah") idSampah: Int,
+        @Field("id_jasa") idJasa: Int,
+        @Field("id_user") idUser: Int
+    ): ResponseRegister
 }

@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
                                 val user = result.data
                                     Toast.makeText(this@LoginActivity, user.message, Toast.LENGTH_SHORT).show()
                                     val token = user.token ?: ""
-                                    loginViewModel.setToken(token, true)
+                                    loginViewModel.setToken(token, true, user.currUser)
                             }
                             is Result.Error -> {
                                 showLoading(false)

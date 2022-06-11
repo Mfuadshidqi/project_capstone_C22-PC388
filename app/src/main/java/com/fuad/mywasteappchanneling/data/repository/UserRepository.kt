@@ -1,10 +1,7 @@
 package com.fuad.mywasteappchanneling.data.repository
 
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.fuad.mywasteappchanneling.data.remote.retrofit.ApiService
@@ -53,10 +50,11 @@ class UserRepository private constructor(
         }
     }
 
-    suspend fun setToken(token: String, isLogin: Boolean) {
+    suspend fun setToken(token: String, isLogin: Boolean, idUser: Int) {
         dataStore.edit { preferences ->
             preferences[TOKEN] = token
             preferences[STATE_KEY] = isLogin
+            preferences[ID_USER] = idUser
         }
     }
 
@@ -72,6 +70,7 @@ class UserRepository private constructor(
         private var INSTANCE: UserRepository? = null
 
         private val TOKEN = stringPreferencesKey("token")
+        private val ID_USER = intPreferencesKey("id_user")
         private val STATE_KEY = booleanPreferencesKey("state")
 
         fun getInstance(

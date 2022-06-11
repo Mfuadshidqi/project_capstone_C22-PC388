@@ -15,9 +15,9 @@ class PenjemputanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val jenisSampah = intent.getParcelableExtra<JenisSampah>(EXTRA_DATA) as JenisSampah
-        Log.d("JENIS", jenisSampah.name)
-            binding.tvJenisSampah.text = jenisSampah.name
+        val jenisSampah = intent.getStringExtra(EXTRA_DATA)
+        Log.d("JENIS", jenisSampah.toString())
+            binding.tvJenisSampah.text = jenisSampah
     }
 
     companion object {

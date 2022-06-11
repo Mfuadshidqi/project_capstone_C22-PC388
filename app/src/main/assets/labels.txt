@@ -1,0 +1,7 @@
+ELEKTRONIK;https://res.cloudinary.com/dnaxpgv0l/image/upload/v1654941697/waste/elektronik_ek6xl1.png
+KACA;https://res.cloudinary.com/dnaxpgv0l/image/upload/v1654941671/waste/kaca_y5hycj.png
+KERTAS/KARTON;https://res.cloudinary.com/dnaxpgv0l/image/upload/v1654941773/waste/kertas_karton_niwnhq.png
+LOGAM;https://res.cloudinary.com/dnaxpgv0l/image/upload/v1654941672/waste/logam_rs2aj5.png
+PLASTIK;https://res.cloudinary.com/dnaxpgv0l/image/upload/v1654941672/waste/plastik_f2hxjr.png
+SISA MAKANAN;https://res.cloudinary.com/dnaxpgv0l/image/upload/v1654941672/waste/makanan_qpfwie.png
+KAIN;https://res.cloudinary.com/dnaxpgv0l/image/upload/v1654941688/waste/kain_t2tsqi.png

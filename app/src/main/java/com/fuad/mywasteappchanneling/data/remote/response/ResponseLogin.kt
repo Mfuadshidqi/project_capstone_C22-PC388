@@ -8,7 +8,7 @@ data class ResponseLogin(
 	val success: Boolean? = null,
 
 	@field:SerializedName("currUser")
-	val currUser: Int? = null,
+	val currUser: Int,
 
 	@field:SerializedName("message")
 	val message: String? = null,

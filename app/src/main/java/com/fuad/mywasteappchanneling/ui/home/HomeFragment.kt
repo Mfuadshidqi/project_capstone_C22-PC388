@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
 
     private fun showSelectedWaste(data: JenisSampah) {
         val moveWithObjectIntent = Intent(activity, PenjemputanActivity::class.java)
-        moveWithObjectIntent.putExtra(PenjemputanActivity.EXTRA_DATA, data)
+        moveWithObjectIntent.putExtra(PenjemputanActivity.EXTRA_DATA, data.name)
         startActivity(moveWithObjectIntent)
     }
 

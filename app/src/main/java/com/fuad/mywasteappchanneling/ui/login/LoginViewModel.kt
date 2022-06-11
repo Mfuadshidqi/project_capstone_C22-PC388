@@ -9,9 +9,9 @@ import kotlinx.coroutines.launch
 
 class LoginViewModel(private val repo: UserRepository) : ViewModel() {
 
-    fun setToken(token: String, isLogin: Boolean){
+    fun setToken(token: String, isLogin: Boolean, idUser: Int){
         viewModelScope.launch {
-            repo.setToken(token, isLogin)
+            repo.setToken(token, isLogin, idUser)
         }
     }
 
