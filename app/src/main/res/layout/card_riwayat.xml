@@ -27,9 +27,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="Status"
+            tools:text="Status"
             android:fontFamily="@font/roboto_medium"
             android:textSize="10sp"
+            android:textColor="@color/green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SmallSp" />
@@ -47,17 +48,53 @@
             tools:text="Berat Sampah " />
 
         <TextView
-            android:id="@+id/tv_description"
+            android:id="@+id/tv_berat_riwayat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Rpharga"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="3dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintStart_toEndOf="@id/tv_berat_sampah"
+            app:layout_constraintTop_toBottomOf="@+id/tv_jenis"
+            tools:text="5" />
+        <TextView
+            android:id="@+id/tv_kg_riwayat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="3dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintStart_toEndOf="@id/tv_berat_riwayat"
+            app:layout_constraintTop_toBottomOf="@+id/tv_jenis"
+            android:text="@string/kg" />
+
+        <TextView
+            android:id="@+id/tv_rp_riwayat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rp"
             android:textSize="20sp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_medium"
             android:textColor="@color/base_color"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_berat_sampah" />
+
+        <TextView
+            android:id="@+id/tv_harga_riwayat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            tools:text="20000"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/base_color"
+            app:layout_constraintStart_toEndOf="@+id/tv_rp_riwayat"
+            app:layout_constraintTop_toBottomOf="@+id/tv_berat_sampah" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
