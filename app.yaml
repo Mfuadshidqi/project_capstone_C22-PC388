@@ -10,5 +10,5 @@ env_variables:
   # TESTVAR: "hehehe"
   # TWILIO_SID: "XYZ1234PBJ"
   # TWILIO_AUTH_TOKEN: "XYZ1234PBJ"
-  # GOOGLE_CLIENT_ID: "xyz1234PBJ.apps.googleusercontent.com"
+  GOOGLE_CLIENT_ID: "776569245382-gi0gi9vmonbak73nhsocnibq801f95iu.apps.googleusercontent.com"
   # GOOGLE_CLIENT_SECRET: "xyz1234-PBJ"git remote set-url origin link

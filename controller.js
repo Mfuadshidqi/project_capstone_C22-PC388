@@ -74,6 +74,17 @@ exports.addTransaction = function (req, res) {
       }
     }
   );
+  // connection.query(
+  //   "INSERT INTO history (id_transaksi, id_sampah, id_jasa, id_user) VALUES(?,?,?,?)",
+  //   [id_transaksi, id_sampah, id_jasa, id_user],
+  //   function (error, rows, fields) {
+  //     if (error) {
+  //       console.log(error);
+  //     } else {
+  //       response.ok("Berhasil menambahkan data", res);
+  //     }
+  //   }
+  // );
 };
 
 //menampilkan data history: PAGE - HISTORY
