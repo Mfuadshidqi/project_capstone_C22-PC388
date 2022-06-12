@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.core.graphics.drawable.toBitmap
 import com.fuad.mywasteappchanneling.R
-import com.fuad.mywasteappchanneling.adapter.JenisSampah
 import com.fuad.mywasteappchanneling.adapter.Waste
 import com.fuad.mywasteappchanneling.databinding.ActivityScannerBinding
 import com.fuad.mywasteappchanneling.ml.ModelBangkitV2

@@ -26,7 +26,6 @@ class ProfilFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        profilViewModel = ViewModelProvider(this, UserViewModelFactory(UserRepository))[ProfilViewModel::class.java]
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
         binding.cardLogout.setOnClickListener{profilViewModel.logout()}

@@ -6,60 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.penjemputan.PenjemputanActivity">
 
-    <TextView
-        android:id="@+id/tv_alamat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/roboto_regular"
-        android:text="@string/alamat_pengambilan"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_alamat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/base_color_light"
-        app:cardCornerRadius="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alamat">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <com.fuad.mywasteappchanneling.customview.NameEditText
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="7dp"
-                android:hint="@string/masukan_alamat_lengkap_anda"
-                android:autofillHints="postalAddress" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_berat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/berat_sampah"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_alamat"
-        app:layout_constraintTop_toBottomOf="@id/card_alamat" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_berat"
@@ -121,8 +79,8 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/pilih_jasa"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_alamat"
-        app:layout_constraintTop_toBottomOf="@id/card_berat"/>
+        app:layout_constraintStart_toStartOf="@+id/tv_berat"
+        app:layout_constraintTop_toBottomOf="@id/card_berat" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_jasa"
@@ -143,6 +101,7 @@
             android:layout_gravity="center">
 
             <RadioGroup
+                android:id="@+id/rg_jasa"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -152,11 +111,13 @@
                 android:layout_margin="7dp">
 
                 <RadioButton
+                    android:id="@+id/rb_motor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/motor_sampah" />
 
                 <RadioButton
+                    android:id="@+id/rb_truck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/truck_sampah" />
@@ -175,8 +136,8 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/pilih_metode_pemmbayaran"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_alamat"
-        app:layout_constraintTop_toBottomOf="@id/card_jasa"/>
+        app:layout_constraintStart_toStartOf="@+id/tv_jasa"
+        app:layout_constraintTop_toBottomOf="@id/card_jasa" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_pembayaran"
@@ -253,4 +214,24 @@
         app:layout_constraintTop_toBottomOf="@+id/card_pembayaran"
         app:layout_constraintStart_toStartOf="@+id/card_pembayaran"
         app:layout_constraintEnd_toEndOf="@+id/card_pembayaran" />
+
+    <RelativeLayout
+        android:id="@+id/view_progressbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@color/base_color_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

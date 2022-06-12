@@ -2,8 +2,10 @@ package com.fuad.mywasteappchanneling.data.remote.retrofit
 
 import com.fuad.mywasteappchanneling.data.remote.response.ResponseLogin
 import com.fuad.mywasteappchanneling.data.remote.response.ResponseRegister
+import com.fuad.mywasteappchanneling.data.remote.response.ResponseRiwayat
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
@@ -32,4 +34,8 @@ interface ApiService {
         @Field("id_jasa") idJasa: Int,
         @Field("id_user") idUser: Int
     ): ResponseRegister
+
+    @GET("getRiwayat")
+    suspend fun getTransaction(
+    ): ResponseRiwayat
 }

@@ -44,6 +44,12 @@ class UserRepository private constructor(
         }
     }
 
+    fun getUserId() : Flow<Int> {
+        return dataStore.data.map { preferences ->
+            preferences[ID_USER] ?: 0
+        }
+    }
+
     fun isLogin() : Flow<Boolean> {
         return dataStore.data.map { preferences ->
             preferences[STATE_KEY] ?: false
