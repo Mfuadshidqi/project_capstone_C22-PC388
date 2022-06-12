@@ -86,7 +86,7 @@ exports.showHistory = function (req, res) {
       if (error) {
         console.log(error);
       } else {
-        response.ok("Berhasil menambahkan data", res);
+        response.ok(rows, res);
       }
     }
   );

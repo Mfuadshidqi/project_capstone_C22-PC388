@@ -2,4 +2,13 @@ runtime: nodejs16
 
 env: flex
 
-cloud_sql_instances: fluent-stratum-345612:us-central1:waste-app
+env_variables:
+  DB_USER: "waste-app-user"
+  DB_NAME: "waste"
+  DB_PASS: "wasteapp101"
+  DB_INSTANCE: "fluent-stratum-345612:us-central1:waste-app"
+  # TESTVAR: "hehehe"
+  # TWILIO_SID: "XYZ1234PBJ"
+  # TWILIO_AUTH_TOKEN: "XYZ1234PBJ"
+  # GOOGLE_CLIENT_ID: "xyz1234PBJ.apps.googleusercontent.com"
+  # GOOGLE_CLIENT_SECRET: "xyz1234-PBJ"git remote set-url origin link
