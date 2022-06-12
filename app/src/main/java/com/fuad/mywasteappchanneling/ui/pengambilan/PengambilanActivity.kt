@@ -16,5 +16,6 @@ class PengambilanActivity : AppCompatActivity() {
         binding.btnJemput.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
+        finish()
     }
 }
