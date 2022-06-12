@@ -1,13 +1,20 @@
 package com.fuad.mywasteappchanneling.ui.pengambilan
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import com.fuad.mywasteappchanneling.R
+import androidx.appcompat.app.AppCompatActivity
+import com.fuad.mywasteappchanneling.databinding.ActivityPengambilanBinding
+import com.fuad.mywasteappchanneling.ui.main.MainActivity
 
 class PengambilanActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPengambilanBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pengambilan)
-        supportActionBar?.hide()
+        binding = ActivityPengambilanBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnJemput.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 }
