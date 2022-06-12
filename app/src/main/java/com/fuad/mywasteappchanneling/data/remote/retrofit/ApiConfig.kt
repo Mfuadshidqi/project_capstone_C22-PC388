@@ -6,7 +6,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
 object ApiConfig {
     fun getApiService(): ApiService {
         val loggingInterceptor = if (BuildConfig.DEBUG) {
@@ -18,6 +17,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
+                //localhost url, waiting for baseUrl from CC
             .baseUrl("http://192.168.43.135:3000/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
