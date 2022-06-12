@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class ResponseRiwayat(
 
 	@field:SerializedName("values")
-	val values: List<ValuesItem?>? = null,
+	val values: ArrayList<ValuesItem>,
 
 	@field:SerializedName("status")
 	val status: Int? = null

@@ -35,7 +35,7 @@ interface ApiService {
         @Field("id_user") idUser: Int
     ): ResponseRegister
 
-    @GET("getRiwayat")
+    @GET("showHistory")
     suspend fun getTransaction(
     ): ResponseRiwayat
 }
